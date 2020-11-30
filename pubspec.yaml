@@ -1,0 +1,33 @@
+name: flutter_langaw
+description: game tutorial
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.0
+  flame: ^0.26.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+  assets:
+    - assets/images/bg/dambg.png
+    - assets/images/ui/ecaib_coin.png
+    - assets/images/ui/gold_coin.png
+    - assets/images/ui/minigame_icon.png
+    - assets/images/ui/shop_icon.png
+    - assets/images/ui/teacher_sil.png
+    - assets/images/teachers/dam/carles.png
+    - assets/images/teachers/dam/carles2.png
+    - assets/images/teachers/dam/carles_tapped.png
+    - assets/images/teachers/dam/carles_tapped2.png
