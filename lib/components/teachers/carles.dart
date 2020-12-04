@@ -4,6 +4,7 @@ import '../teacher.dart';
 
 class Carles extends Teacher {
   Carles(TeachersGame game, double x, double y) : super(game, x, y) {
+    teacherId = 1;
     movingSprite = List<Sprite>();
     tappedSprite = List<Sprite>();
     movingSprite.add(Sprite('teachers/dam/carles.png'));

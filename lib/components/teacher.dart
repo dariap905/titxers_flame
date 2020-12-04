@@ -8,6 +8,7 @@ import '../view.dart';
 class Teacher {
   final TeachersGame game;
   Rect teacherRect;
+  int teacherId;
   List<Sprite> movingSprite;
   List<Sprite> tappedSprite;
   double movingSpriteIndex = 0;

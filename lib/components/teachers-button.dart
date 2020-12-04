@@ -3,12 +3,12 @@ import 'package:flame/sprite.dart';
 import '../teachers-game.dart';
 import '../view.dart';
 
-class TeachersButton {
+class TeachersHomeButton {
   final TeachersGame game;
   Rect rect;
   Sprite sprite;
 
-  TeachersButton(this.game) {
+  TeachersHomeButton(this.game) {
     rect = Rect.fromLTWH(
       game.screenSize.width / 2 - (game.tileSize / 2),
       game.screenSize.height - (game.tileSize * 1.25),

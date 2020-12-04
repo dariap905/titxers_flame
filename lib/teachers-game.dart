@@ -28,7 +28,7 @@ class TeachersGame extends Game {
 
   MinigameButton minigameButton;
   ShopButton shopButton;
-  TeachersButton teachersButton;
+  TeachersHomeButton teachersButton;
 
   GoldDisplay goldDisplay;
   EcaibDisplay ecaibDisplay;
@@ -52,7 +52,7 @@ class TeachersGame extends Game {
     background = Dambg(this);
     minigameButton = MinigameButton(this);
     shopButton = ShopButton(this);
-    teachersButton = TeachersButton(this);
+    teachersButton = TeachersHomeButton(this);
     spawnTeacher();
   }
 
