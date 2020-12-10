@@ -1,6 +1,9 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:flame/sprite.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_langaw/components/teachers/gold-coin.dart';
 
 import '../teachers-game.dart';
 import '../view.dart';
@@ -65,10 +68,7 @@ class Teacher {
   void onTapDown() {
     if (!isTapped) {
       isTapped = true;
-
-      if (game.activeView == View.home) {
-        game.gold += 1;
-      }
     }
   }
+
 }

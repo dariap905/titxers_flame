@@ -1,9 +1,9 @@
 enum View {
-  home,
+  playing,
   gold,
   ecaibs,
   minigame,
-  teachers,
+  teachersShowAll,
   shop,
   help,
   credits,

@@ -23,6 +23,6 @@ class ShopButton {
   }
 
   void onTapDown() {
-    game.activeView = View.credits;
+    game.activeView = View.shop;
   }
 }

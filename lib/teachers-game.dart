@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter_langaw/components/teachers/gold-coin.dart';
+import 'package:flutter_langaw/views/shop-view.dart';
 import 'components/dambg.dart';
 import 'components/ecaib-display.dart';
 import 'components/gold-display.dart';
@@ -12,7 +14,6 @@ import 'components/teacher.dart';
 import 'components/teachers-button.dart';
 import 'components/teachers/carles.dart';
 import 'view.dart';
-import 'views/home-view.dart';
 
 class TeachersGame extends Game {
   Size screenSize;
@@ -23,8 +24,8 @@ class TeachersGame extends Game {
   int ecaibs;
 
   Dambg background;
-  View activeView = View.home;
-  HomeView homeView;
+
+  View activeView = View.playing;
 
   MinigameButton minigameButton;
   ShopButton shopButton;
@@ -32,23 +33,25 @@ class TeachersGame extends Game {
 
   GoldDisplay goldDisplay;
   EcaibDisplay ecaibDisplay;
+  ShopInterfaceDisplay shopInterface;
 
   List<Teacher> teachers;
+  List<GoldCoin> goldCoins;
 
   TeachersGame() {
     initialize();
   }
 
   void initialize() async {
-    gold = 55;
-    ecaibs = 777;
+    gold = 0;
+    ecaibs = 0;
     teachers = List<Teacher>();
+    goldCoins = List<GoldCoin>();
     rnd = Random();
     resize(await Flame.util.initialDimensions());
-
+    shopInterface = ShopInterfaceDisplay(this);
     goldDisplay = GoldDisplay(this);
     ecaibDisplay = EcaibDisplay(this);
-    homeView = HomeView(this);
     background = Dambg(this);
     minigameButton = MinigameButton(this);
     shopButton = ShopButton(this);
@@ -60,30 +63,36 @@ class TeachersGame extends Game {
     double x = rnd.nextDouble() * (screenSize.width - tileSize);
     double y = rnd.nextDouble() * (screenSize.height - tileSize);
     teachers.add(Carles(this, x, y));
-    teachers.add(Carles(this, x, y));
-    teachers.add(Carles(this, x, y));
+  }
+
+  void spawnGoldCoins() {
+    double x = rnd.nextDouble() * (screenSize.width - tileSize);
+    double y = rnd.nextDouble() * (screenSize.height - tileSize);
+    goldCoins.add(GoldCoin(this, x, y));
   }
 
   void render(Canvas canvas) {
     background.render(canvas);
     teachers.forEach((Teacher teacher) => teacher.render(canvas));
-    if (activeView == View.home) {
+    goldCoins.forEach((GoldCoin goldCoin) => goldCoin.render(canvas));
       goldDisplay.render(canvas);
       ecaibDisplay.render(canvas);
-      homeView.render(canvas);
       minigameButton.render(canvas);
       shopButton.render(canvas);
       teachersButton.render(canvas);
-    }
+
+      if(activeView == View.shop){
+        shopInterface.render(canvas);
+      }
 
   }
 
   void update(double t) {
     teachers.forEach((Teacher teacher) => teacher.update(t));
-    if (activeView == View.home){
       goldDisplay.update(t);
       ecaibDisplay.update(t);
-    }
+    goldCoins.removeWhere((GoldCoin gc) => gc.isTapped);
+
   }
 
   void resize(Size size) {
@@ -95,8 +104,20 @@ class TeachersGame extends Game {
     teachers.forEach((Teacher teacher) {
       if (teacher.teacherRect.contains(d.globalPosition)) {
         teacher.onTapDown();
+        spawnGoldCoins();
       }
     });
+
+    goldCoins.forEach((GoldCoin gc) {
+      if (gc.goldCoinRect.contains(d.globalPosition)) {
+        gc.onTapDown();
+      }
+    });
+
+    if(shopButton.rect.contains(d.globalPosition)){
+      shopButton.onTapDown();
+    }
+
   }
 
 }

@@ -1,15 +1,27 @@
 import 'dart:ui';
+import 'package:flame/sprite.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import '../teachers-game.dart';
 
 class EcaibDisplay {
   final TeachersGame game;
+  Rect ecaibRect;
+  Sprite ecaibSprite;
   TextPainter painter;
   TextStyle textStyle;
   Offset position;
 
   EcaibDisplay(this.game) {
+
+    ecaibRect = Rect.fromLTWH(
+      game.screenSize.width - (game.tileSize * 1.25),
+      game.tileSize/4,
+      game.tileSize * 1.2,
+      game.tileSize * 1.2,
+    );
+    ecaibSprite = Sprite('ui/ecaib_coin.png');
+
     painter = TextPainter(
       textAlign: TextAlign.left,
       textDirection: TextDirection.ltr,
@@ -30,6 +42,7 @@ class EcaibDisplay {
   }
 
   void render(Canvas c) {
+    ecaibSprite.renderRect(c, ecaibRect);
     painter.paint(c, position);
   }
 
