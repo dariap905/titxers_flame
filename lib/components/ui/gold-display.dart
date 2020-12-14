@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flame/sprite.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import '../teachers-game.dart';
+import '../../teachers-game.dart';
 
 /*this is just to display the text of how much gold the player currently has*/
 
@@ -18,8 +18,8 @@ class GoldDisplay {
       goldRect = Rect.fromLTWH(
         game.tileSize * .25,
         game.tileSize/4,
-        game.tileSize*1.2,
-        game.tileSize*1.2,
+        game.tileSize*4,
+        game.tileSize*4,
       );
 
       goldSprite = Sprite('ui/gold_coin.png');

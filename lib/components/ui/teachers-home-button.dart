@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flame/sprite.dart';
-import '../teachers-game.dart';
-import '../view.dart';
+import '../../teachers-game.dart';
+import '../../view.dart';
 
 class TeachersHomeButton {
   final TeachersGame game;
@@ -10,10 +10,10 @@ class TeachersHomeButton {
 
   TeachersHomeButton(this.game) {
     rect = Rect.fromLTWH(
-      game.screenSize.width / 2 - (game.tileSize / 2),
-      game.screenSize.height - (game.tileSize * 1.25),
-      game.tileSize,
-      game.tileSize,
+      game.screenSize.width / 2 - (game.tileSize * 2),
+      game.screenSize.height - (game.tileSize / 4) - (game.tileSize * 4),
+      game.tileSize * 4,
+      game.tileSize * 4,
     );
     sprite = Sprite('ui/teacher_sil.png');
   }
@@ -23,6 +23,6 @@ class TeachersHomeButton {
   }
 
   void onTapDown() {
-    game.activeView = View.credits;
+    game.activeView = View.teachersShowAll;
   }
 }

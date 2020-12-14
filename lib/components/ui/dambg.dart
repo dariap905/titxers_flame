@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flame/sprite.dart';
-import '../teachers-game.dart';
+import '../../teachers-game.dart';
 
 class Dambg {
 
@@ -12,9 +12,9 @@ class Dambg {
     bgSprite = Sprite('bg/dambg.png');
     bgRect = Rect.fromLTWH(
       0,
-      game.screenSize.height - (game.tileSize * 23),
-      game.tileSize * 9,
-      game.tileSize * 23,
+      game.screenSize.height - (game.tileSize * 64),
+      game.tileSize * 64,
+      game.tileSize * 64,
     );
   }
 

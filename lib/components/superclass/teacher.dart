@@ -3,10 +3,8 @@ import 'dart:ui';
 
 import 'package:flame/sprite.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_langaw/components/teachers/gold-coin.dart';
-
-import '../teachers-game.dart';
-import '../view.dart';
+import '../../teachers-game.dart';
+import '../../view.dart';
 
 class Teacher {
   final TeachersGame game;
@@ -17,13 +15,13 @@ class Teacher {
   double movingSpriteIndex = 0;
   double tappedSpriteIndex = 0;
 
-  double get speed => game.tileSize * 0.09;
+  double get speed => game.tileSize * 0.2;
   Offset targetLocation;
 
   bool isTapped = false;
 
   Teacher(this.game, double x, double y) {
-    teacherRect = Rect.fromLTWH(x, y, game.tileSize, game.tileSize);
+    teacherRect = Rect.fromLTWH(x, y, game.tileSize*4, game.tileSize*4);
     setTargetLocation();
   }
 
@@ -66,8 +64,11 @@ class Teacher {
   }
 
   void onTapDown() {
-    if (!isTapped) {
-      isTapped = true;
+    if(game.activeView == View.playing){
+      if (!isTapped) {
+        isTapped = true;
+        game.spawnGoldCoins();
+      }
     }
   }
 

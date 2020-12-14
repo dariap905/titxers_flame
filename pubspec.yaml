@@ -26,7 +26,9 @@ flutter:
     - assets/images/ui/gold_coin.png
     - assets/images/ui/minigame_icon.png
     - assets/images/ui/shop_icon.png
+    - assets/images/ui/shop_interface.png
     - assets/images/ui/teacher_sil.png
+    - assets/images/items/visit_ticket.png
     - assets/images/teachers/dam/carles.png
     - assets/images/teachers/dam/carles2.png
     - assets/images/teachers/dam/carles_tapped.png

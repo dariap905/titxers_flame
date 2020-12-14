@@ -4,7 +4,7 @@ import 'package:flame/sprite.dart';
 
 import '../../teachers-game.dart';
 import '../../view.dart';
-import '../teacher.dart';
+import '../superclass/teacher.dart';
 
 class GoldCoin {
   final TeachersGame game;
@@ -19,16 +19,16 @@ class GoldCoin {
 
   GoldCoin(this.game, double x, double y) {
     coinSprite = List<Sprite>();
-    goldCoinRect = Rect.fromLTWH(x, y, game.tileSize, game.tileSize);
+    goldCoinRect = Rect.fromLTWH(x, y, game.tileSize * 2, game.tileSize * 2);
     coinSprite.add(Sprite('ui/gold_coin.png'));
     setTargetLocation();
   }
 
   void setTargetLocation() {
     double x = game.rnd.nextDouble() *
-        (game.screenSize.width - (game.tileSize * 2.025));
+        (game.screenSize.width - (game.tileSize * 4));
     double y = game.rnd.nextDouble() *
-        (game.screenSize.height - (game.tileSize * 2.025));
+        (game.screenSize.height - (game.tileSize * 4));
     targetLocation = Offset(x, y);
   }
 

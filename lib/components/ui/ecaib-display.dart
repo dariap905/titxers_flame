@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flame/sprite.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import '../teachers-game.dart';
+import '../../teachers-game.dart';
 
 class EcaibDisplay {
   final TeachersGame game;
@@ -15,10 +15,10 @@ class EcaibDisplay {
   EcaibDisplay(this.game) {
 
     ecaibRect = Rect.fromLTWH(
-      game.screenSize.width - (game.tileSize * 1.25),
+      game.screenSize.width - (game.tileSize * 0.25) - game.tileSize*4,
       game.tileSize/4,
-      game.tileSize * 1.2,
-      game.tileSize * 1.2,
+      game.tileSize * 4,
+      game.tileSize * 4,
     );
     ecaibSprite = Sprite('ui/ecaib_coin.png');
 
@@ -57,7 +57,7 @@ class EcaibDisplay {
       painter.layout();
 
       position = Offset(
-        (game.tileSize * 6.5) - (painter.width / 2),
+        (game.screenSize.width - (game.tileSize * 0.25) - game.tileSize*4) - (painter.width *2),
         (game.tileSize) - (painter.height / 2),
       );
     }

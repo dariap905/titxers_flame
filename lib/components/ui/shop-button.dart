@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flame/sprite.dart';
-import '../teachers-game.dart';
-import '../view.dart';
+import '../../teachers-game.dart';
+import '../../view.dart';
 
 class ShopButton {
   final TeachersGame game;
@@ -10,10 +10,10 @@ class ShopButton {
 
   ShopButton(this.game) {
     rect = Rect.fromLTWH(
-      game.screenSize.width - (game.tileSize * 1.25),
-      game.screenSize.height - (game.tileSize * 1.25),
-      game.tileSize,
-      game.tileSize,
+      game.screenSize.width - (game.tileSize * 4.5),
+      game.screenSize.height - (game.tileSize / 4 ) - (game.tileSize * 4),
+      game.tileSize*4,
+      game.tileSize*4,
     );
     sprite = Sprite('ui/shop_icon.png');
   }
