@@ -20,7 +20,7 @@ class TeachersGame extends Game {
   double tileSize;
   Random rnd;
 
-  int gold = 150;
+  int gold;
   int ecaibs;
 
   Dambg background;
@@ -43,7 +43,7 @@ class TeachersGame extends Game {
   }
 
   void initialize() async {
-    gold = 0;
+    gold = 150;
     ecaibs = 0;
     teachers = List<Teacher>();
     goldCoins = List<GoldCoin>();
@@ -113,6 +113,10 @@ class TeachersGame extends Game {
 
     if (shopButton.rect.contains(d.globalPosition)) {
       shopButton.onTapDown();
+    }
+
+    if(shopInterface.shopInterfaceRect.contains(d.globalPosition)){
+      shopInterface.onTapDown();
     }
   }
 }

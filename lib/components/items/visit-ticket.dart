@@ -10,4 +10,15 @@ class VisitTicket extends Item {
     itemSprite = List<Sprite>();
     itemSprite.add(Sprite('items/visit_ticket.png'));
   }
+
+  @override
+  void onTapDown(){
+    if(game.activeView == View.shop){
+      if ((!isTapped) & (game.gold >= 150)) {
+        isTapped = true;
+        game.gold -= 150;
+        game.spawnTeacher();
+      }
+    }
+  }
 }

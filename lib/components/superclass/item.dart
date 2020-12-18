@@ -26,13 +26,7 @@ class Item extends SpriteComponent {
   }
 
   void onTapDown() {
-    if(game.activeView == View.shop){
-      if (!isTapped) {
-        isTapped = true;
-        print('Working???');
-        //game.spawnTeacher();
-      }
-    }
+
   }
 
 }

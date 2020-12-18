@@ -7,7 +7,7 @@ import 'package:flutter_langaw/components/items/visit-ticket.dart';
 import 'package:flutter_langaw/components/superclass/item.dart';
 import '../teachers-game.dart';
 
-class ShopInterface extends Game with TapDetector{
+class ShopInterface {
   final TeachersGame game;
   Rect shopInterfaceRect;
   Sprite shopInterfaceSprite;
@@ -56,12 +56,9 @@ class ShopInterface extends Game with TapDetector{
 
   void update(double t) {}
 
-  @override
-  void onTapDown(TapDownDetails d) {
+  void onTapDown() {
     items.forEach((Item item) {
-      if (item.itemRect.contains(d.globalPosition)) {
         item.onTapDown();
-      }
     });
   }
 }
