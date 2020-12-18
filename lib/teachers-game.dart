@@ -64,15 +64,35 @@ class TeachersGame extends Game {
   }
 
   void spawnTeacher() {
+
+    //randomize spawning
+    /*
+    * switch (rnd.nextInt(5)) {
+  case 0:
+    flies.add(HouseFly(this, x, y));
+    break;
+  case 1:
+    flies.add(DroolerFly(this, x, y));
+    break;
+  case 2:
+    flies.add(AgileFly(this, x, y));
+    break;
+  case 3:
+    flies.add(MachoFly(this, x, y));
+    break;
+  case 4:
+    flies.add(HungryFly(this, x, y));
+    break;
+}*/
     double x = rnd.nextDouble() * (screenSize.width - tileSize);
     double y = rnd.nextDouble() * (screenSize.height - tileSize);
     teachers.add(Carles(this, x, y));
   }
 
-  void spawnGoldCoins() {
-    double x = rnd.nextDouble() * (screenSize.width - tileSize);
-    double y = rnd.nextDouble() * (screenSize.height - tileSize);
-    goldCoins.add(GoldCoin(this, x, y));
+  void spawnGoldCoins(int x, int y) {
+    /*double x = rnd.nextDouble() * (screenSize.width - tileSize);
+    double y = rnd.nextDouble() * (screenSize.height - tileSize);*/
+    goldCoins.add(GoldCoin(this, x.toDouble() + tileSize * 3 , y.toDouble() + tileSize * 3 ));
   }
 
   void render(Canvas c) {

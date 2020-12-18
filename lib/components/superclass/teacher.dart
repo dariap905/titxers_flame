@@ -9,7 +9,6 @@ import '../../view.dart';
 class Teacher {
   final TeachersGame game;
   Rect teacherRect;
-  int teacherId;
   List<Sprite> movingSprite;
   List<Sprite> tappedSprite;
   double movingSpriteIndex = 0;
@@ -18,6 +17,7 @@ class Teacher {
   double get speed => game.tileSize * 0.2;
   Offset targetLocation;
 
+  bool isOffScreen = false;
   bool isTapped = false;
 
   Teacher(this.game, double x, double y) {
@@ -45,6 +45,14 @@ class Teacher {
   }
 
   void update(double t) {
+
+    //check if offscreen Top or Left
+    if (teacherRect.top > (game.screenSize.height - game.tileSize / 4)
+        || teacherRect.top > (game.screenSize.height - (game.tileSize / 4) - (game.tileSize * 4))
+        || teacherRect.left > game.screenSize.width) {
+      isOffScreen = true;
+    }
+
     movingSpriteIndex += 4 * t;
     if (movingSpriteIndex >= 2) {
       movingSpriteIndex -= 2;
