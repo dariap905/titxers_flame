@@ -3,8 +3,9 @@ import 'dart:ui';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter_langaw/components/teachers/gold-coin.dart';
-import 'package:flutter_langaw/views/shop-interface.dart';
+import 'components/teachers/gold-coin.dart';
+import 'components/ui/close-icon.dart';
+import 'views/shop-interface.dart';
 import 'components/ui/dambg.dart';
 import 'components/ui/ecaib-display.dart';
 import 'components/ui/gold-display.dart';
@@ -34,6 +35,8 @@ class TeachersGame extends Game {
   GoldDisplay goldDisplay;
   EcaibDisplay ecaibDisplay;
   ShopInterface shopInterface;
+  
+  CloseIcon closeIcon;
 
   List<Teacher> teachers;
   List<GoldCoin> goldCoins;
@@ -56,6 +59,7 @@ class TeachersGame extends Game {
     minigameButton = MinigameButton(this);
     shopButton = ShopButton(this);
     teachersButton = TeachersHomeButton(this);
+    closeIcon = CloseIcon(this);
     spawnTeacher();
   }
 
@@ -71,18 +75,19 @@ class TeachersGame extends Game {
     goldCoins.add(GoldCoin(this, x, y));
   }
 
-  void render(Canvas canvas) {
-    background.render(canvas);
-    teachers.forEach((Teacher teacher) => teacher.render(canvas));
-    goldCoins.forEach((GoldCoin goldCoin) => goldCoin.render(canvas));
-    goldDisplay.render(canvas);
-    ecaibDisplay.render(canvas);
-    minigameButton.render(canvas);
-    shopButton.render(canvas);
-    teachersButton.render(canvas);
+  void render(Canvas c) {
+    background.render(c);
+    teachers.forEach((Teacher teacher) => teacher.render(c));
+    goldCoins.forEach((GoldCoin goldCoin) => goldCoin.render(c));
+    goldDisplay.render(c);
+    ecaibDisplay.render(c);
+    minigameButton.render(c);
+    shopButton.render(c);
+    teachersButton.render(c);
 
     if (activeView == View.shop) {
-      shopInterface.render(canvas);
+      shopInterface.render(c);
+      closeIcon.render(c);
     }
   }
 
@@ -117,6 +122,10 @@ class TeachersGame extends Game {
 
     if(shopInterface.shopInterfaceRect.contains(d.globalPosition)){
       shopInterface.onTapDown();
+    }
+
+    if(closeIcon.ciRect.contains(d.globalPosition)){
+      closeIcon.onTapDown();
     }
   }
 }

@@ -28,6 +28,7 @@ flutter:
     - assets/images/ui/shop_icon.png
     - assets/images/ui/shop_interface.png
     - assets/images/ui/teacher_sil.png
+    - assets/images/ui/close_icon.png
     - assets/images/items/visit_ticket.png
     - assets/images/teachers/dam/carles.png
     - assets/images/teachers/dam/carles2.png
