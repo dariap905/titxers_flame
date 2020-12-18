@@ -9,14 +9,17 @@ class Item extends SpriteComponent {
   final TeachersGame game;
   Rect itemRect;
   List<Sprite> itemSprite;
+  double itemSpriteIndex = 0;
 
   bool isTapped = false;
 
   Item(this.game, double x, double y) {
-    itemRect = Rect.fromLTWH(x, y, game.tileSize * 2, game.tileSize * 2);
+    itemRect = Rect.fromLTWH(x, y, game.tileSize * 3, game.tileSize * 3);
   }
 
   void render(Canvas c) {
+    itemSprite[itemSpriteIndex.toInt()].renderRect(
+        c, itemRect.inflate(2));
   }
 
   void update(double t) {
@@ -26,7 +29,8 @@ class Item extends SpriteComponent {
     if(game.activeView == View.shop){
       if (!isTapped) {
         isTapped = true;
-        //todo
+        print('Working???');
+        //game.spawnTeacher();
       }
     }
   }

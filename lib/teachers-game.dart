@@ -20,7 +20,7 @@ class TeachersGame extends Game {
   double tileSize;
   Random rnd;
 
-  int gold;
+  int gold = 150;
   int ecaibs;
 
   Dambg background;
@@ -102,7 +102,6 @@ class TeachersGame extends Game {
     teachers.forEach((Teacher teacher) {
       if (teacher.teacherRect.contains(d.globalPosition)) {
         teacher.onTapDown();
-
       }
     });
 

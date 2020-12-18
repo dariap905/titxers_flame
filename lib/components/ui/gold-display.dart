@@ -59,8 +59,8 @@ class GoldDisplay {
       painter.layout();
 
       position = Offset(
-        (game.tileSize * 2.5) - (painter.width / 2),
-        (game.tileSize) - (painter.height / 2),
+        (game.tileSize * 6) - (painter.width / 2),
+        (game.tileSize * 2) - (painter.height / 2),
       );
     }
   }
