@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter_langaw/views/answer-interface.dart';
 import 'package:flutter_langaw/views/questions_interface.dart';
 import 'components/teachers/gold-coin.dart';
 import 'components/ui/close-icon.dart';
@@ -37,7 +38,7 @@ class TeachersGame extends Game {
   EcaibDisplay ecaibDisplay;
   ShopInterface shopInterface;
   QuestionsInterface questionsInterface;
-
+  AnswerInterface answerInterface;
   
   CloseIcon closeIcon;
 
@@ -49,7 +50,7 @@ class TeachersGame extends Game {
   }
 
   void initialize() async {
-    gold = 150;
+    gold = 999;
     ecaibs = 0;
     teachers = List<Teacher>();
     goldCoins = List<GoldCoin>();
@@ -57,6 +58,7 @@ class TeachersGame extends Game {
     resize(await Flame.util.initialDimensions());
     shopInterface = ShopInterface(this);
     questionsInterface = QuestionsInterface(this);
+    answerInterface = AnswerInterface(this);
     goldDisplay = GoldDisplay(this);
     ecaibDisplay = EcaibDisplay(this);
     background = Dambg(this);
@@ -100,13 +102,15 @@ class TeachersGame extends Game {
   }
 
   void render(Canvas c) {
+
+    //active.view = playing
     background.render(c);
     teachers.forEach((Teacher teacher) => teacher.render(c));
     goldCoins.forEach((GoldCoin goldCoin) => goldCoin.render(c));
     goldDisplay.render(c);
     ecaibDisplay.render(c);
-    minigameButton.render(c);
     shopButton.render(c);
+    minigameButton.render(c);
     teachersButton.render(c);
 
     if (activeView == View.shop) {
@@ -116,6 +120,11 @@ class TeachersGame extends Game {
 
     if (activeView == View.questions) {
       questionsInterface.render(c);
+      closeIcon.render(c);
+    }
+
+    if(activeView == View.answers){
+      answerInterface.render(c);
       closeIcon.render(c);
     }
   }
@@ -155,6 +164,16 @@ class TeachersGame extends Game {
 
     if(closeIcon.ciRect.contains(d.globalPosition)){
       closeIcon.onTapDown();
+    }
+
+    if (minigameButton.minigameRect.contains(d.globalPosition)) {
+      minigameButton.onTapDown();
+    }
+
+    if(activeView == View.questions){
+      if (questionsInterface.questionsRect.contains(d.globalPosition)) {
+        questionsInterface.onTapDown();
+      }
     }
   }
 }

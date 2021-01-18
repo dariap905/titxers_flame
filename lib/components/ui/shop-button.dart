@@ -23,6 +23,7 @@ class ShopButton {
   }
 
   void onTapDown() {
+    print("Tapped shop");
     game.activeView = View.shop;
   }
 }

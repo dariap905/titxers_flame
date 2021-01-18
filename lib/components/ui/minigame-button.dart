@@ -6,11 +6,11 @@ import '../../view.dart';
 
 class MinigameButton {
   final TeachersGame game;
-  Rect rect;
+  Rect minigameRect;
   Sprite sprite;
 
   MinigameButton(this.game) {
-    rect = Rect.fromLTWH(
+    minigameRect = Rect.fromLTWH(
       game.tileSize * 0.25,
       game.screenSize.height - (game.tileSize / 4) - (game.tileSize * 4),
       game.tileSize * 4,
@@ -20,11 +20,11 @@ class MinigameButton {
   }
 
   void render(Canvas c) {
-    sprite.renderRect(c, rect);
+    sprite.renderRect(c, minigameRect);
   }
 
   void onTapDown() {
-    debugPrint("Taptap");
+    print("Tapped minigame");
     game.activeView = View.questions;
   }
 }

@@ -1,32 +1,34 @@
 import 'dart:ui';
 import 'package:flame/sprite.dart';
 import 'package:flutter/cupertino.dart';
-import '../teachers-game.dart';
-import '../view.dart';
+import '../../teachers-game.dart';
 
-class QuestionsInterface {
+class Questions{
   final TeachersGame game;
-  Rect questionsRect;
-  Sprite questionsSprite;
+  //json info
+  String text;
+  String validAnswer;
 
-  QuestionsInterface(this.game) {
-    questionsRect = Rect.fromLTWH(
+  Rect qRect;
+  Sprite qSprite;
+
+  Questions(this.game) {
+    qRect = Rect.fromLTWH(
       game.screenSize.width / 2  - (game.tileSize * 10),
       game.screenSize.height / 2 - (game.tileSize * 4),
       game.tileSize * 20,
       game.tileSize * 10,
     );
-    questionsSprite = Sprite('ui/choose_questions.png');
+    //qSprite = Sprite('ui/choose_questions.png');
   }
 
   void render(Canvas c) {
-    questionsSprite.renderRect(c, questionsRect);
+    qSprite.renderRect(c, qRect);
   }
 
   void update(double t) {}
 
   void onTapDown() {
-    print("Tapped answer a question");
-    game.activeView = View.answers;
+
   }
 }

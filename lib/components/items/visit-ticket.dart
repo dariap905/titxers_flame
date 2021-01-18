@@ -14,7 +14,8 @@ class VisitTicket extends Item {
   @override
   void onTapDown(){
     if(game.activeView == View.shop){
-      if ((!isTapped) & (game.gold >= 150)) {
+      //add (!isTapped)&  if you wanna make it unique
+      if (game.gold >= 150) {
         isTapped = true;
         game.gold -= 150;
         game.spawnTeacher();

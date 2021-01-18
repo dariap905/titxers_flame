@@ -23,6 +23,6 @@ class TeachersHomeButton {
   }
 
   void onTapDown() {
-    game.activeView = View.teachersShowAll;
+    game.activeView = View.showTitxers;
   }
 }

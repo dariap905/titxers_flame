@@ -33,6 +33,7 @@ flutter:
     - assets/images/ui/b.png
     - assets/images/ui/c.png
     - assets/images/ui/choose_questions.png
+    - assets/images/ui/answer_interface.png
     - assets/images/items/visit_ticket.png
     - assets/images/teachers/dam/carles.png
     - assets/images/teachers/dam/carles2.png

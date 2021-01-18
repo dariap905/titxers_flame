@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_langaw/components/items/visit-ticket.dart';
 import 'package:flutter_langaw/components/superclass/item.dart';
 import '../teachers-game.dart';
+import '../view.dart';
 
 class ShopInterface {
   final TeachersGame game;
@@ -33,13 +34,9 @@ class ShopInterface {
     //cell 1, 0
     items.add(VisitTicket(game, x, y));
     //cell 1, 1
-    items.add(VisitTicket(game, x + (game.tileSize * 4.5), y));
     //cell 1, 2
-    items.add(VisitTicket(game, x + (game.tileSize * 9.5), y));
     //cell 1, 3
-    items.add(VisitTicket(game, x + (game.tileSize * 14.2), y));
     //cell 2, 0
-    items.add(VisitTicket(game, x, y + (game.tileSize * 5)));
     //cell 2, 1
     //cell 2, 2
     //cell 2, 3
@@ -57,8 +54,10 @@ class ShopInterface {
   void update(double t) {}
 
   void onTapDown() {
-    items.forEach((Item item) {
+    if(game.activeView == View.shop){
+      items.forEach((Item item) {
         item.onTapDown();
-    });
+      });
+    }
   }
 }

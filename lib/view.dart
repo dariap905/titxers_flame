@@ -1,6 +1,7 @@
 enum View {
   playing,
-  teachersShowAll,
+  showTitxers,
   shop,
-  questions
+  questions,
+  answers
 }
