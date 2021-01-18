@@ -14,14 +14,13 @@ class Carles extends Teacher {
     tappedSprite.add(Sprite('teachers/dam/carles_tapped2.png'));
   }
 
-  @override
+/*  @override
   void onTapDown() {
     if(game.activeView == View.playing){
       if (!isTapped) {
         isTapped = true;
-        game.spawnGoldCoins(this.x, this.y);
       }
     }
-  }
+  }*/
 
 }

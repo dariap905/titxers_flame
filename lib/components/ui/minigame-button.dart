@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flame/sprite.dart';
+import 'package:flutter/cupertino.dart';
 import '../../teachers-game.dart';
 import '../../view.dart';
 
@@ -23,6 +24,7 @@ class MinigameButton {
   }
 
   void onTapDown() {
-    game.activeView = View.minigame;
+    debugPrint("Taptap");
+    game.activeView = View.questions;
   }
 }

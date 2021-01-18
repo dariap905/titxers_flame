@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter_langaw/views/questions_interface.dart';
 import 'components/teachers/gold-coin.dart';
 import 'components/ui/close-icon.dart';
 import 'views/shop-interface.dart';
@@ -35,6 +36,8 @@ class TeachersGame extends Game {
   GoldDisplay goldDisplay;
   EcaibDisplay ecaibDisplay;
   ShopInterface shopInterface;
+  QuestionsInterface questionsInterface;
+
   
   CloseIcon closeIcon;
 
@@ -53,6 +56,7 @@ class TeachersGame extends Game {
     rnd = Random();
     resize(await Flame.util.initialDimensions());
     shopInterface = ShopInterface(this);
+    questionsInterface = QuestionsInterface(this);
     goldDisplay = GoldDisplay(this);
     ecaibDisplay = EcaibDisplay(this);
     background = Dambg(this);
@@ -89,9 +93,9 @@ class TeachersGame extends Game {
     teachers.add(Carles(this, x, y));
   }
 
-  void spawnGoldCoins(int x, int y) {
-    /*double x = rnd.nextDouble() * (screenSize.width - tileSize);
-    double y = rnd.nextDouble() * (screenSize.height - tileSize);*/
+  void spawnGoldCoins() {
+    double x = rnd.nextDouble() * (screenSize.width - tileSize);
+    double y = rnd.nextDouble() * (screenSize.height - tileSize);
     goldCoins.add(GoldCoin(this, x.toDouble() + tileSize * 3 , y.toDouble() + tileSize * 3 ));
   }
 
@@ -107,6 +111,11 @@ class TeachersGame extends Game {
 
     if (activeView == View.shop) {
       shopInterface.render(c);
+      closeIcon.render(c);
+    }
+
+    if (activeView == View.questions) {
+      questionsInterface.render(c);
       closeIcon.render(c);
     }
   }
