@@ -21,6 +21,7 @@ flutter:
 
   uses-material-design: true
   assets:
+    - assets/text/api_titxers.txt
     - assets/images/bg/dambg.png
     - assets/images/ui/ecaib_coin.png
     - assets/images/ui/gold_coin.png

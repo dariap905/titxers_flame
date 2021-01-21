@@ -4,8 +4,11 @@ import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_langaw/views/answer-interface.dart';
-import 'package:flutter_langaw/views/questions_interface.dart';
+import 'package:flutter_langaw/views/choose_field_interface.dart';
 import 'components/teachers/gold-coin.dart';
+import 'components/ui/a.dart';
+import 'components/ui/b.dart';
+import 'components/ui/c.dart';
 import 'components/ui/close-icon.dart';
 import 'views/shop-interface.dart';
 import 'components/ui/dambg.dart';
@@ -37,8 +40,11 @@ class TeachersGame extends Game {
   GoldDisplay goldDisplay;
   EcaibDisplay ecaibDisplay;
   ShopInterface shopInterface;
-  QuestionsInterface questionsInterface;
+  ChooseQuestionField chooseFamily;
   AnswerInterface answerInterface;
+  A aAnswer;
+  B bAnswer;
+  C cAnswer;
   
   CloseIcon closeIcon;
 
@@ -57,8 +63,11 @@ class TeachersGame extends Game {
     rnd = Random();
     resize(await Flame.util.initialDimensions());
     shopInterface = ShopInterface(this);
-    questionsInterface = QuestionsInterface(this);
+    chooseFamily = ChooseQuestionField(this);
     answerInterface = AnswerInterface(this);
+    aAnswer = A(this);
+    bAnswer = B(this);
+    cAnswer = C(this);
     goldDisplay = GoldDisplay(this);
     ecaibDisplay = EcaibDisplay(this);
     background = Dambg(this);
@@ -119,13 +128,16 @@ class TeachersGame extends Game {
     }
 
     if (activeView == View.questions) {
-      questionsInterface.render(c);
+      chooseFamily.render(c);
       closeIcon.render(c);
     }
 
     if(activeView == View.answers){
       answerInterface.render(c);
       closeIcon.render(c);
+      aAnswer.render(c);
+      bAnswer.render(c);
+      cAnswer.render(c);
     }
   }
 
@@ -171,8 +183,8 @@ class TeachersGame extends Game {
     }
 
     if(activeView == View.questions){
-      if (questionsInterface.questionsRect.contains(d.globalPosition)) {
-        questionsInterface.onTapDown();
+      if (chooseFamily.questionsRect.contains(d.globalPosition)) {
+        chooseFamily.onTapDown();
       }
     }
   }

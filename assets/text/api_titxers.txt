@@ -1,0 +1,400 @@
+{
+"questions":[
+	{
+		"id" : "ag",
+		"number" : "1",
+		"text" : "¿Indica cómo puede ser emitido el pagaré?
+		a) Nominativo   
+		b) Corriente   
+		c) En Ahorro ",
+		"answer": "a"
+	},
+	{
+		"id" : "ag",
+		"number" : "2",
+		"text" : "Los seguros de vivienda-pensión, son seguros especiales de:
+		a) Sucesión 
+		b) Seguros de Vida   
+		c) Supervivencia",
+		"answer": "c"
+	},
+	{
+		"id" : "ag",
+		"number" : "3",
+		"text" : "En el seguro de automóviles, ¿Qué factores no determinan el importe?
+		a) La provincia de circulación
+		b) El sexto conductor  
+		c) La edad del conductor",
+		"answer": "b"
+	},
+	{
+		"id" : "ag",
+		"number" : "4",
+		"text" : "La persona que se encuentra expuesta al riesgo es:
+		a) Beneficiario
+		b) Asegurado 
+		c) Asegurador",
+		"answer": "b"
+	},
+	{
+		"id" : "ag",
+		"number" : "5",
+		"text" : "El objetivo profesional debe ser:
+		a) Realista e inalcanzable
+		b) Irreal y alcanzable
+		c) Realista, alcanzable y con plan de acción",
+		"answer": "c"
+	},
+	{
+		"id" : "ag",
+		"number" : "6",
+		"text" : "El objetivo profesional debe ser:
+		a) Realista e inalcanzable
+		b) Irreal y alcanzable
+		c) Realista, alcanzable y con plan de acción",
+		"answer": "c"
+	},
+	{
+		"id" : "ag",
+		"number" : "7",
+		"text" : "El equipo de trabajo es:
+		a) Las anteriores son falsas
+		b) Grupo Mínimo de 2 y máximo de 25
+		c) Cuanto más individuos, menos trabajo",
+		"answer": "a"
+	},
+	{
+		"id" : "ag",
+		"number" : "8",
+		"text" : " ¿La regla más importante para hablar en público es?
+		a) Elevar el tono de voz
+		b) Conocer a todos los participantes
+		c) Saber de lo que se está hablando",
+		"answer": "c"
+	},
+	{
+		"id" : "ag",
+		"number" : "9",
+		"text" : "Para que exista relación laboral debe darse.
+		a) Independencia, retribución y voluntariedad
+		b) Dependencia, ajenidad, voluntariedad, retribución y carácter personal
+		c) Independencia, voluntariedad y carácter personal",
+		"answer": "b"
+	},
+	{
+		"id" : "ag",
+		"number" : "10",
+		"text" : "¿Cuál de las siguientes cuentas forman parte del activo de una empresa?
+		a) Clientes
+		b) Capital
+		c) Proveedores",
+		"answer": "a"
+	},
+	{
+		"id" : "ag",
+		"number" : "11",
+		"text" : "¿Que significa cargar una cuenta?
+		a) Cargarte la cuenta 
+		b) Anotar en el debe de la cuenta
+		c) Abrir una cuenta",
+		"answer": "b"
+	},
+	{
+		"id" : "cm",
+		"number" : "1",
+		"text" : "El patrimonio empresarial está formado por:
+		a) Activo: Bienes-Obligaciones y Pasivo: Obligaciones
+		b) Activo: Bienes-Derechos, y Pasivo: Obligaciones
+		c) Pasivo: Bienes-Derechos, y Activo: Obligaciones",
+		"answer": "b"
+	},
+	{
+		"id" : "cm",
+		"number" : "2",
+		"text" : "La actividad económica se construye en tres fases:
+		a) Producción, Fabricación y Consumo
+		b) Producción, Distribución y Consumo
+		c) Producción,Distribución y Venta",
+		"answer": "b"
+	},
+	{
+		"id" : "cm",
+		"number" : "3",
+		"text" : "El IVA es un impuesto:
+		a) Directo
+		b) Indirecto
+		c) Las dos respuestas son incorrectas",
+		"answer": "b"
+	},
+	{
+		"id" : "cm",
+		"number" : "4",
+		"text" : "El IVA no se aplica en:
+		a) Baleares y Canarias
+		b) Baleares, Ceuta y Melilla
+		c) Ceuta, Melilla y Canarias",
+		"answer": "c"
+	},
+	{
+		"id" : "cm",
+		"number" : "5",
+		"text" : "La autorrepercusión del IVA se practica en:
+		a) Las adquisiciones intracomunitarias
+		b) Las importaciones
+		c) Las entregas intracomunitarias",
+		"answer": "a"
+	},
+	{
+		"id" : "cm",
+		"number" : "6",
+		"text" : "El sujeto pasivo del IVA es:
+		a) El consumidor final
+		b) Los profesionales y empresarios
+		c) Ambos",
+		"answer": "b"
+	},
+	{
+		"id" : "cm",
+		"number" : "7",
+		"text" : "Las entregas en metálico como anticipo de una compra: 
+		a) No están gravadas por el IVA
+		b) Están gravadas por el mismo tipo de IVA que la futura compra
+		c) Están gravadas por el tipo de IVA general",
+		"answer": "b"
+	},
+	{
+		"id" : "cm",
+		"number" : "8",
+		"text" : "¿Cual de las siguientes herramientas no corresponde a Marketing directo?
+		a) Cine
+		b) Mailing
+		c) Teléfono",
+		"answer": "a"
+	},
+	{
+		"id" : "cm",
+		"number" : "9",
+		"text" : "¿Cual es la primera fase en el ciclo e vida del producto?
+		a) Madurez
+		b) Crecimiento
+		c) Introducción",
+		"answer": "c"
+	},
+	{
+		"id" : "cm",
+		"number" : "10",
+		"text" : "El Marketing:
+		a) Crea necesidades
+		b) No precisa conocer las necesidades del consumidor
+		c) Identifica, crea o desarolla demanda",
+		"answer": "c"
+	},
+	{
+		"id" : "cm",
+		"number" : "11",
+		"text" : "En general lo que hace que el producto sea deseable es:
+		a) Su precio
+		b) Su marca
+		c) Su utilidad",
+		"answer": "c"
+	},
+	{
+		"id" : "ic",
+		"number" : "1",
+		"text" : "El software es:
+		a) El conjunto de instrucciones electrònicas que le dicen al hardware lo que se debe hacer
+		b) El que abarca el conjunto de componentes indispensables necesarios para otorgar la funcionalidad
+		c) El cerebro del ordenador",
+		"answer": "a"
+	},
+	{
+		"id" : "ic",
+		"number" : "2",
+		"text" : "El hardware es:
+		a) Pertenece al equipo central de la computadora
+		b) El corazón del ordenador
+		c) Es toda la parte física del computador, todos sus componentes físicos",
+		"answer": "c"
+	},
+	{
+		"id" : "ic",
+		"number" : "3",
+		"text" : "El procesador es:
+		a) El que controla y sincroniza todo el proceso de la computadora
+		b) El que procesa o manipula la información almacenada en la memoria de una computadora
+		c) Son los ojos del ordenador",
+		"answer": "b"
+	},
+	{
+		"id" : "ic",
+		"number" : "4",
+		"text" : "El computador es una máquina
+		a) Electrónica
+		b) Eléctrica
+		c) Electrodoméstica",
+		"answer": "b"
+	},
+	{
+		"id" : "ic",
+		"number" : "5",
+		"text" : "El teclado es un dispositivo de:
+		a) Entrada
+		b) Almacenamiento
+		c) Salida",
+		"answer": "a"
+	},
+	{
+		"id" : "ic",
+		"number" : "6",
+		"text" : "Nombre de la primer computadora electrónica creada en 1947:
+		a) HP
+		b) TOSHIBA
+		c) ENIAC",
+		"answer": "c"
+	},
+	{
+		"id" : "ic",
+		"number" : "7",
+		"text" : "Cuál es la parte del ordenador que contiene la información electrónica y donde se almacenan todos los programas 
+		a) RAM
+		b) Disco duro
+		c) CPU",
+		"answer": "b"
+	},
+	{
+		"id" : "ic",
+		"number" : "8",
+		"text" : "¿Cuál es el cerebro de la computadora?
+		a) El monitor  
+		b) Disco duro
+		c) El procesador",
+		"answer": "c"
+	},
+	{
+		"id" : "ic",
+		"number" : "9",
+		"text" : "Si hago ctrl+c, para pegar necesito hacer...
+		a) ctrl+d
+		b) ctrl+p
+		c) ctrl+v",
+		"answer": "c"
+	},
+	{
+		"id" : "ic",
+		"number" : "10",
+		"text" : "El teclado es un software?
+		a) No, es un hardware
+		b) Sí 
+		c) Ninguna",
+		"answer": "a"
+	},
+	{
+		"id" : "ic",
+		"number" : "11",
+		"text" : "Para que sirve la tecla ENTER
+		a) Para dar entrada a una orden o validarla 
+		b) Para apagar el ordenador  
+		c) Ninguna",
+		"answer": "a"
+	},
+	{
+		"id" : "co",
+		"number" : "1",
+		"text" : "La retroalimentación puede ser:
+		a) Negativa 
+		b) Positiva 
+		c) Negativa y positiva ",
+		"answer": "c"
+	},
+	{
+		"id" : "co",
+		"number" : "2",
+		"text" : "La comunicación es un proceso de carácter
+		a) Moral
+		b) Social 
+		c) Ético",
+		"answer": "b"
+	},
+	{
+		"id" : "co",
+		"number" : "3",
+		"text" : "Define el tiempo y el lugar donde se realiza la comunicación es la situación o el entorno 
+		a) Fuente
+		b) Código 
+		c) Contexto",
+		"answer": "c"
+	},
+	{
+		"id" : "co",
+		"number" : "4",
+		"text" : "Define el tiempo y el lugar donde se realiza la comunicación es la situación o el entorno:
+		a) Fuente
+		b) Código 
+		c) Contexto",
+		"answer": "c"
+	},
+	{
+		"id" : "co",
+		"number" : "5",
+		"text" : "Define el contenido de la información:
+		a) Fuente
+		b) Código 
+		c) Mensaje",
+		"answer": "c"
+	},
+	{
+		"id" : "co",
+		"number" : "6",
+		"text" : "A quien se destina el mensaje:
+		a) Receptor o descodificado
+		b) Código 
+		c) Canal",
+		"answer": "a"
+	},
+	{
+		"id" : "co",
+		"number" : "7",
+		"text" : "La comunicación no verbal también se llama:
+		a) Lenguaje de signos
+		b) Lenguaje externo 
+		c) Lenguaje corporal",
+		"answer": "c"
+	},
+	{
+		"id" : "co",
+		"number" : "8",
+		"text" : "Un elemento fundamental de la comunicación verbal es:
+		a) El tono
+		b) La sonrisa 
+		c) El formato",
+		"answer": "a"
+	},
+	{
+		"id" : "co",
+		"number" : "9",
+		"text" : "El conjunto de signos, que le permite al emisor transmitir el mensaje se denomina:
+		a) Contexto
+		b) Canal 
+		c) Código",
+		"answer": "c"
+	},
+	{
+		"id" : "co",
+		"number" : "10",
+		"text" : "¿Cuál es el medio físico que transporta el mensaje?
+		a) Emisor
+		b) Canal 
+		c) Código",
+		"answer": "b"
+	},
+	{
+		"id" : "co",
+		"number" : "11",
+		"text" : "En la comunicación verbal, el código está constituido por signos:
+		a) Acústicos 
+		b) No lingüísticos 
+		c) Lingüísticos",
+		"answer": "c"
+	}
+]
+}

@@ -1,34 +1,28 @@
-import 'dart:ui';
-import 'package:flame/sprite.dart';
-import 'package:flutter/cupertino.dart';
-import '../../teachers-game.dart';
 
-class Questions{
-  final TeachersGame game;
-  //json info
+import 'dart:async' show Future;
+import 'dart:convert';
+import 'package:flutter/services.dart' show rootBundle;
+
+class Question{
+  String id;
+  int number;
   String text;
   String validAnswer;
 
-  Rect qRect;
-  Sprite qSprite;
+  Question({this.id, this.number, this.text, this.validAnswer});
 
-  Questions(this.game) {
-    qRect = Rect.fromLTWH(
-      game.screenSize.width / 2  - (game.tileSize * 10),
-      game.screenSize.height / 2 - (game.tileSize * 4),
-      game.tileSize * 20,
-      game.tileSize * 10,
+  factory Question.fromJson(Map<String, dynamic> json) {
+    return new Question(
+      id: json['id'] as String,
+      number: json['number'] as int,
+      text: json['text'] as String,
+      validAnswer: json['answer'] as String,
     );
-    //qSprite = Sprite('ui/choose_questions.png');
   }
+/*
+  Future<String> loadAsset() async {
+    return await rootBundle.loadString('assets/text/api_titxers.txt');
+  }*/
 
-  void render(Canvas c) {
-    qSprite.renderRect(c, qRect);
-  }
 
-  void update(double t) {}
-
-  void onTapDown() {
-
-  }
 }

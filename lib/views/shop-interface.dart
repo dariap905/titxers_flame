@@ -1,6 +1,4 @@
 import 'dart:ui';
-import 'package:flame/game/game.dart';
-import 'package:flame/gestures.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_langaw/components/items/visit-ticket.dart';
@@ -13,7 +11,11 @@ class ShopInterface {
   Rect shopInterfaceRect;
   Sprite shopInterfaceSprite;
 
+  //one list for rendering
   List<Item> items;
+  //one list for one-time use items
+
+  //one list for multiple use items
 
   ShopInterface(this.game) {
     shopInterfaceRect = Rect.fromLTWH(
