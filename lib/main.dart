@@ -5,12 +5,14 @@ import 'package:flame/util.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
 import 'teachers-game.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Util flameUtil = Util();
   await flameUtil.fullScreen();
   await flameUtil.setOrientation(DeviceOrientation.portraitUp);
+  SharedPreferences storage = await SharedPreferences.getInstance();
 
   Flame.images.loadAll(<String>[
     'bg/dambg.png',
@@ -20,7 +22,7 @@ void main() async {
     'teachers/dam/carles_tapped2.png',
   ]);
 
-  final game = TeachersGame();
+  final game = TeachersGame(storage);
   runApp(game.widget);
 
   TapGestureRecognizer tapper = TapGestureRecognizer();

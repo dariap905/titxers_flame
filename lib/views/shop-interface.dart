@@ -12,29 +12,32 @@ class ShopInterface {
   Sprite shopInterfaceSprite;
 
   //one list for rendering
-  List<Item> items;
+  List<Item> itemsRenderOnly;
+
   //one list for one-time use items
 
   //one list for multiple use items
 
   ShopInterface(this.game) {
     shopInterfaceRect = Rect.fromLTWH(
-      game.screenSize.width / 2  - (game.tileSize * 10),
+      game.screenSize.width / 2 - (game.tileSize * 10),
       game.screenSize.height / 2 - (game.tileSize * 4),
       game.tileSize * 20,
       game.tileSize * 20,
     );
     shopInterfaceSprite = Sprite('ui/shop_interface.png');
 
-    items = List<Item>();
-    createItems();
+    itemsRenderOnly = List<Item>();
+    createItemsForDisplay();
   }
 
-  void createItems(){
-    double x = (game.screenSize.width / 2  - (game.tileSize * 10) + (game.tileSize * 1.5));
-    double y = game.screenSize.height / 2 - (game.tileSize * 4) + ((game.tileSize * 2) * 3);
+  void createItemsForDisplay() {
+    double x = (game.screenSize.width / 2 - (game.tileSize * 10) +
+        (game.tileSize * 1.5));
+    double y = game.screenSize.height / 2 - (game.tileSize * 4) +
+        ((game.tileSize * 2) * 3);
     //cell 1, 0
-    items.add(VisitTicket(game, x, y));
+    itemsRenderOnly.add(VisitTicket(game, x, y));
     //cell 1, 1
     //cell 1, 2
     //cell 1, 3
@@ -50,16 +53,19 @@ class ShopInterface {
 
   void render(Canvas c) {
     shopInterfaceSprite.renderRect(c, shopInterfaceRect);
-    items.forEach((Item item) => item.render(c));
+    itemsRenderOnly.forEach((Item item) => item.render(c));
   }
 
   void update(double t) {}
 
-  void onTapDown() {
-    if(game.activeView == View.shop){
-      items.forEach((Item item) {
-        item.onTapDown();
-      });
+  void onTapDown(TapDownDetails d) {
+    if (game.activeView == View.shop) {
+      itemsRenderOnly.forEach((Item item) {
+        if (item.itemRect.contains(d.globalPosition)) {
+          item.onTapDown();
+        }
+      }
+      );
     }
   }
 }

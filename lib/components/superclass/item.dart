@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flame/components/component.dart';
 import 'package:flame/sprite.dart';
+import 'package:flutter/cupertino.dart';
 import '../../teachers-game.dart';
 import '../../view.dart';
 
@@ -26,7 +27,6 @@ class Item extends SpriteComponent {
   }
 
   void onTapDown() {
-
   }
 
 }

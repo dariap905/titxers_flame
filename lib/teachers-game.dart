@@ -20,11 +20,14 @@ import 'components/superclass/teacher.dart';
 import 'components/ui/teachers-home-button.dart';
 import 'components/teachers/carles.dart';
 import 'view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class TeachersGame extends Game {
   Size screenSize;
   double tileSize;
   Random rnd;
+
+  final SharedPreferences storage;
 
   int gold;
   int ecaibs;
@@ -51,7 +54,7 @@ class TeachersGame extends Game {
   List<Teacher> teachers;
   List<GoldCoin> goldCoins;
 
-  TeachersGame() {
+  TeachersGame(this.storage) {
     initialize();
   }
 
@@ -171,7 +174,7 @@ class TeachersGame extends Game {
     }
 
     if(shopInterface.shopInterfaceRect.contains(d.globalPosition)){
-      shopInterface.onTapDown();
+      shopInterface.onTapDown(d);
     }
 
     if(closeIcon.ciRect.contains(d.globalPosition)){
