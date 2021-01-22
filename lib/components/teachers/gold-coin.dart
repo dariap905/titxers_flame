@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flame/flame.dart';
 import 'package:flame/sprite.dart';
 
 import '../../teachers-game.dart';
@@ -25,11 +26,11 @@ class GoldCoin {
   }
 
   void setTargetLocation() {
-    double x = game.rnd.nextDouble() *
+/*    double x = game.rnd.nextDouble() *
         (game.screenSize.width - (game.tileSize * 4));
     double y = game.rnd.nextDouble() *
-        (game.screenSize.height - (game.tileSize * 4));
-    targetLocation = Offset(x, y);
+        (game.screenSize.height - (game.tileSize * 50));
+    targetLocation = Offset(x, y);*/
   }
 
   void render(Canvas c) {
@@ -42,6 +43,7 @@ class GoldCoin {
 
   void onTapDown() {
       if (game.activeView == View.playing) {
+        Flame.audio.play('loot-coin.mp3');
         isTapped = true;
         game.gold += 1;
       }

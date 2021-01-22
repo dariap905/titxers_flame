@@ -57,7 +57,7 @@ class EcaibDisplay {
       painter.layout();
 
       position = Offset(
-        (game.screenSize.width - (game.tileSize * 0.25) - game.tileSize * 4) - (painter.width * 2),
+        (game.screenSize.width - (game.tileSize) - game.tileSize * 1.5) - (painter.width * 2),
         (game.tileSize * 2) - (painter.height / 2),
       );
     }

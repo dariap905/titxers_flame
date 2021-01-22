@@ -14,12 +14,25 @@ void main() async {
   await flameUtil.setOrientation(DeviceOrientation.portraitUp);
   SharedPreferences storage = await SharedPreferences.getInstance();
 
-  Flame.images.loadAll(<String>[
+  Flame.images.loadAll([
     'bg/dambg.png',
     'teachers/dam/carles.png',
     'teachers/dam/carles2.png',
     'teachers/dam/carles_tapped.png',
     'teachers/dam/carles_tapped2.png',
+    'teachers/dam/carles_tapped2.png',
+  ]);
+
+  Flame.audio.disableLog();
+  Flame.audio.loadAll([
+    'bgm.mp3',
+    'buy-item.mp3',
+    'click-titxer.mp3',
+    'close-click.mp3',
+    'correct-answer.mp3',
+    'loot-coin.mp3',
+    'normal-click.mp3',
+    'wrong-answer.mp3',
   ]);
 
   final game = TeachersGame(storage);

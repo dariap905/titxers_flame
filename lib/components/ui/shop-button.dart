@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flame/flame.dart';
 import 'package:flame/sprite.dart';
 import '../../teachers-game.dart';
 import '../../view.dart';
@@ -23,6 +24,7 @@ class ShopButton {
   }
 
   void onTapDown() {
+    Flame.audio.play('normal-click.mp3');
     print("Tapped shop");
     game.activeView = View.shop;
   }

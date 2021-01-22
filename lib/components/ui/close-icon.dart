@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flame/flame.dart';
 import 'package:flame/sprite.dart';
 
 import '../../teachers-game.dart';
@@ -29,6 +30,7 @@ class CloseIcon {
   }
 
   void onTapDown() {
+    Flame.audio.play('close-click.mp3');
     game.activeView = View.playing;
   }
 }

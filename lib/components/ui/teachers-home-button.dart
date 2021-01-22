@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flame/flame.dart';
 import 'package:flame/sprite.dart';
 import '../../teachers-game.dart';
 import '../../view.dart';
@@ -23,6 +24,7 @@ class TeachersHomeButton {
   }
 
   void onTapDown() {
+    Flame.audio.play('normal-click.mp3');
     game.activeView = View.showTitxers;
   }
 }

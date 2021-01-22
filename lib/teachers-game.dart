@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/gestures.dart';
+import 'package:flutter_langaw/components/ui/music-button.dart';
+import 'package:flutter_langaw/components/ui/sound-button.dart';
 import 'package:flutter_langaw/views/answer-interface.dart';
 import 'package:flutter_langaw/views/choose_field_interface.dart';
 import 'components/teachers/gold-coin.dart';
@@ -21,6 +23,7 @@ import 'components/ui/teachers-home-button.dart';
 import 'components/teachers/carles.dart';
 import 'view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class TeachersGame extends Game {
   Size screenSize;
@@ -54,13 +57,17 @@ class TeachersGame extends Game {
   List<Teacher> teachers;
   List<GoldCoin> goldCoins;
 
+  AudioPlayer bgm;
+  MusicButton musicButton;
+  SoundButton soundButton;
+
   TeachersGame(this.storage) {
     initialize();
   }
 
   void initialize() async {
     gold = 999;
-    ecaibs = 0;
+    ecaibs = 50;
     teachers = List<Teacher>();
     goldCoins = List<GoldCoin>();
     rnd = Random();
@@ -78,7 +85,12 @@ class TeachersGame extends Game {
     shopButton = ShopButton(this);
     teachersButton = TeachersHomeButton(this);
     closeIcon = CloseIcon(this);
+    musicButton = MusicButton(this);
+    soundButton = SoundButton(this);
+
     spawnTeacher();
+
+    bgm = await Flame.audio.playLongAudio('bgm.mp3', volume: 1);
   }
 
   void spawnTeacher() {
@@ -102,14 +114,14 @@ class TeachersGame extends Game {
     flies.add(HungryFly(this, x, y));
     break;
 }*/
-    double x = rnd.nextDouble() * (screenSize.width - tileSize);
-    double y = rnd.nextDouble() * (screenSize.height - tileSize);
+    double x = rnd.nextDouble() * (screenSize.width - tileSize * 12);
+    double y = rnd.nextDouble() * (screenSize.height - tileSize * 12);
     teachers.add(Carles(this, x, y));
   }
 
   void spawnGoldCoins() {
-    double x = rnd.nextDouble() * (screenSize.width - tileSize);
-    double y = rnd.nextDouble() * (screenSize.height - tileSize);
+    double x = rnd.nextDouble() * (screenSize.width - tileSize * 11);
+    double y = rnd.nextDouble() * (screenSize.height - tileSize * 11);
     goldCoins.add(GoldCoin(this, x.toDouble() + tileSize * 3 , y.toDouble() + tileSize * 3 ));
   }
 
@@ -124,6 +136,8 @@ class TeachersGame extends Game {
     shopButton.render(c);
     minigameButton.render(c);
     teachersButton.render(c);
+    musicButton.render(c);
+    soundButton.render(c);
 
     if (activeView == View.shop) {
       shopInterface.render(c);
@@ -155,6 +169,8 @@ class TeachersGame extends Game {
     screenSize = size;
     tileSize = 16;
   }
+
+  //Remember that objects on top should receive tap events first
 
   void onTapDown(TapDownDetails d) {
     teachers.forEach((Teacher teacher) {
@@ -189,6 +205,16 @@ class TeachersGame extends Game {
       if (chooseFamily.questionsRect.contains(d.globalPosition)) {
         chooseFamily.onTapDown();
       }
+    }
+
+    // music button
+    if (musicButton.rect.contains(d.globalPosition)) {
+      musicButton.onTapDown();
+    }
+
+    // sound button
+    if (soundButton.rect.contains(d.globalPosition)) {
+      soundButton.onTapDown();
     }
   }
 }

@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:flame/flame.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/cupertino.dart';
 import '../../teachers-game.dart';
@@ -24,6 +25,7 @@ class MinigameButton {
   }
 
   void onTapDown() {
+    Flame.audio.play('normal-click.mp3');
     print("Tapped minigame");
     game.activeView = View.questions;
   }

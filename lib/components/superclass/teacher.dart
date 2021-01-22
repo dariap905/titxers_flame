@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:flame/flame.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/cupertino.dart';
 import '../../teachers-game.dart';
@@ -72,6 +73,8 @@ class Teacher {
   }
 
   void onTapDown() {
+    Flame.audio.play('click-titxer.mp3');
+
     if(game.activeView == View.playing){
       if (!isTapped) {
         isTapped = true;

@@ -19,10 +19,16 @@ class Question{
       validAnswer: json['answer'] as String,
     );
   }
-/*
-  Future<String> loadAsset() async {
-    return await rootBundle.loadString('assets/text/api_titxers.txt');
-  }*/
+
+
+  Future<String>_loadFromAsset() async {
+    return await rootBundle.loadString('text/api_titxers.txt');
+  }
+
+  Future parseJson() async {
+    String jsonString = await _loadFromAsset();
+    final jsonResponse = jsonDecode(jsonString);
+  }
 
 
 }

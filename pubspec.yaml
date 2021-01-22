@@ -22,6 +22,14 @@ flutter:
 
   uses-material-design: true
   assets:
+    - assets/audio/bgm.mp3
+    - assets/audio/buy-item.mp3
+    - assets/audio/click-titxer.mp3
+    - assets/audio/close-click.mp3
+    - assets/audio/correct-answer.mp3
+    - assets/audio/loot-coin.mp3
+    - assets/audio/normal-click.mp3
+    - assets/audio/wrong-answer.mp3
     - assets/text/api_titxers.txt
     - assets/images/bg/dambg.png
     - assets/images/ui/ecaib_coin.png
@@ -41,3 +49,7 @@ flutter:
     - assets/images/teachers/dam/carles2.png
     - assets/images/teachers/dam/carles_tapped.png
     - assets/images/teachers/dam/carles_tapped2.png
+    - assets/images/ui/sound/bgm_disabled.png
+    - assets/images/ui/sound/bgm_enabled.png
+    - assets/images/ui/sound/sound_disabled.png
+    - assets/images/ui/sound/sound_enabled.png

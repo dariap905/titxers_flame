@@ -15,7 +15,7 @@ class AnswerInterface{
   TextStyle textStyle;
   Offset position;
 
-  String text = "Hello please work thanks";
+  static String text333 = "Hello please work thanks";
 
   AnswerInterface(this.game) {
     answerRect = Rect.fromLTWH(
@@ -48,9 +48,9 @@ class AnswerInterface{
 
   void update(double t) {
     // ignore: deprecated_member_use
-    if ((painter.text?.text ?? '') != text) {
+    if ((painter.text?.text ?? '') != text333) {
       painter.text = TextSpan(
-        text: text,
+        text: text333,
         style: textStyle,
       );
 
