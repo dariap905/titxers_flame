@@ -51,6 +51,9 @@ flutter:
     - assets/images/items/coffee_cup.png
     - assets/images/items/laptop.png
     - assets/images/items/round_gold_coin.png
+    - assets/images/teachers/dam/pep.png
+    - assets/images/teachers/dam/pep2.png
+    - assets/images/teachers/dam/pep3.png
     - assets/images/teachers/dam/carles.png
     - assets/images/teachers/dam/carles2.png
     - assets/images/teachers/dam/carles_tapped.png

@@ -28,7 +28,7 @@ class AnswerInterface{
     answerSprite = Sprite('ui/answer_interface.png');
 
     painter = TextPainter(
-      textAlign: TextAlign.left,
+      textAlign: TextAlign.center,
       textDirection: TextDirection.ltr,
     );
 
@@ -57,8 +57,8 @@ class AnswerInterface{
       painter.layout();
 
       position = Offset(
-        (game.tileSize * 6) - (painter.width / 2),
-        (game.tileSize * 2) - (painter.height / 2),
+        500,
+        500,
       );
     }
   }

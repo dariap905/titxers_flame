@@ -1,6 +1,5 @@
 import 'package:flame/sprite.dart';
 import 'package:flutter_langaw/teachers-game.dart';
-import '../../view.dart';
 import '../superclass/teacher.dart';
 
 class Carles extends Teacher {
@@ -13,14 +12,4 @@ class Carles extends Teacher {
     tappedSprite.add(Sprite('teachers/dam/carles_tapped.png'));
     tappedSprite.add(Sprite('teachers/dam/carles_tapped2.png'));
   }
-
-/*  @override
-  void onTapDown() {
-    if(game.activeView == View.playing){
-      if (!isTapped) {
-        isTapped = true;
-      }
-    }
-  }*/
-
 }

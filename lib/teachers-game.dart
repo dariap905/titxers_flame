@@ -8,8 +8,8 @@ import 'package:flutter_langaw/components/ui/sound-button.dart';
 import 'package:flutter_langaw/views/answer-interface.dart';
 import 'package:flutter_langaw/views/choose_field_interface.dart';
 import 'components/items/gold-coin.dart';
+import 'components/teachers/pep.dart';
 import 'components/ui/a.dart';
-import 'components/ui/audio/background-music.dart';
 import 'components/ui/b.dart';
 import 'components/ui/c.dart';
 import 'components/ui/close-icon.dart';
@@ -90,12 +90,10 @@ class TeachersGame extends Game {
     musicButton = MusicButton(this);
     soundButton = SoundButton(this);
 
-    /* source: https://patrickdearteaga.com/arcade-music/ */
+    spawnTeacher();
 
     bgm = await Flame.audio.loop('bgm.mp3', volume: 1);
-    //bgm.pause();
 
-    spawnTeacher();
   }
 
   void spawnTeacher() {
@@ -122,6 +120,7 @@ class TeachersGame extends Game {
     double x = rnd.nextDouble() * (screenSize.width - tileSize * 12);
     double y = rnd.nextDouble() * (screenSize.height - tileSize * 12);
     teachers.add(Carles(this, x, y));
+    teachers.add(Pep(this, x+50, y+50));
   }
 
   void spawnGoldCoins() {
