@@ -31,7 +31,7 @@ flutter:
     - assets/audio/normal-click.mp3
     - assets/audio/wrong-answer.mp3
     - assets/text/api_titxers.txt
-    - assets/images/bg/dambg.png
+    - assets/images/bg/bg.png
     - assets/images/ui/ecaib_coin.png
     - assets/images/ui/gold_coin.png
     - assets/images/ui/minigame_icon.png
@@ -44,7 +44,13 @@ flutter:
     - assets/images/ui/c.png
     - assets/images/ui/choose_questions.png
     - assets/images/ui/answer_interface.png
+    - assets/images/ui/minigame_book.png
     - assets/images/items/visit_ticket.png
+    - assets/images/items/bed.png
+    - assets/images/items/chart.png
+    - assets/images/items/coffee_cup.png
+    - assets/images/items/laptop.png
+    - assets/images/items/round_gold_coin.png
     - assets/images/teachers/dam/carles.png
     - assets/images/teachers/dam/carles2.png
     - assets/images/teachers/dam/carles_tapped.png
