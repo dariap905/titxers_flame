@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flame/util.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
+import 'components/ui/audio/background-music.dart';
 import 'teachers-game.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
   Util flameUtil = Util();
   await flameUtil.fullScreen();
@@ -15,7 +17,7 @@ void main() async {
   SharedPreferences storage = await SharedPreferences.getInstance();
 
   Flame.images.loadAll([
-    'bg/dambg.png',
+    'bg/bg.png',
     'teachers/dam/carles.png',
     'teachers/dam/carles2.png',
     'teachers/dam/carles_tapped.png',
@@ -37,7 +39,8 @@ void main() async {
 
   final game = TeachersGame(storage);
   runApp(game.widget);
-
+  BGM.attachWidgetBindingListener();
+  //await BGM.add('sound/background.mp3');
   TapGestureRecognizer tapper = TapGestureRecognizer();
   tapper.onTapDown = game.onTapDown;
   // ignore: deprecated_member_use

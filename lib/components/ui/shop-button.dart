@@ -24,7 +24,9 @@ class ShopButton {
   }
 
   void onTapDown() {
-    Flame.audio.play('normal-click.mp3');
+    if(game.soundButton.isEnabled){
+      Flame.audio.play('normal-click.mp3');
+    }
     print("Tapped shop");
     game.activeView = View.shop;
   }

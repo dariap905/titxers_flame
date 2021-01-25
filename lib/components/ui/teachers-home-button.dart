@@ -24,7 +24,9 @@ class TeachersHomeButton {
   }
 
   void onTapDown() {
-    Flame.audio.play('normal-click.mp3');
+    if(game.soundButton.isEnabled){
+      Flame.audio.play('normal-click.mp3');
+    }
     game.activeView = View.showTitxers;
   }
 }

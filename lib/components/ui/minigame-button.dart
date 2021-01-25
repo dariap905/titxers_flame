@@ -17,7 +17,7 @@ class MinigameButton {
       game.tileSize * 4,
       game.tileSize * 4,
     );
-    sprite = Sprite('ui/minigame_icon.png');
+    sprite = Sprite('ui/minigame_book.png');
   }
 
   void render(Canvas c) {
@@ -25,7 +25,9 @@ class MinigameButton {
   }
 
   void onTapDown() {
-    Flame.audio.play('normal-click.mp3');
+    if(game.soundButton.isEnabled){
+      Flame.audio.play('normal-click.mp3');
+    }
     print("Tapped minigame");
     game.activeView = View.questions;
   }

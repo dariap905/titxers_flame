@@ -1,6 +1,10 @@
 import 'dart:ui';
 import 'package:flame/sprite.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_langaw/components/items/coffee.dart';
+import 'package:flutter_langaw/components/items/laptop.dart';
+import 'package:flutter_langaw/components/items/bed.dart';
+import 'package:flutter_langaw/components/items/chart.dart';
 import 'package:flutter_langaw/components/items/visit-ticket.dart';
 import 'package:flutter_langaw/components/superclass/item.dart';
 import '../teachers-game.dart';
@@ -39,9 +43,13 @@ class ShopInterface {
     //cell 1, 0
     itemsRenderOnly.add(VisitTicket(game, x, y));
     //cell 1, 1
+    itemsRenderOnly.add(Bed(game, x+game.tileSize*4.5, y));
     //cell 1, 2
+    itemsRenderOnly.add(Chart(game, x+game.tileSize*9.5, y));
     //cell 1, 3
+    itemsRenderOnly.add(Coffee(game, x+game.tileSize*14.5, y));
     //cell 2, 0
+    itemsRenderOnly.add(Laptop(game, x, y+game.tileSize*4.5));
     //cell 2, 1
     //cell 2, 2
     //cell 2, 3

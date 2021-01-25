@@ -73,7 +73,9 @@ class Teacher {
   }
 
   void onTapDown() {
-    Flame.audio.play('click-titxer.mp3');
+    if(game.soundButton.isEnabled){
+      Flame.audio.play('click-titxer.mp3');
+    }
 
     if(game.activeView == View.playing){
       if (!isTapped) {

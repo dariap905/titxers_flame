@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flame/sprite.dart';
+import 'package:flutter_langaw/components/ui/audio/background-music.dart';
 import '../../teachers-game.dart';
 
 class MusicButton {
@@ -31,10 +32,10 @@ class MusicButton {
   void onTapDown() {
     if (isEnabled) {
       isEnabled = false;
-      game.bgm.setVolume(0);
+      BGM.stop();
     } else {
       isEnabled = true;
-      game.bgm.setVolume(1);
+      BGM.play(0);
     }
   }
 }

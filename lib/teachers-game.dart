@@ -7,13 +7,14 @@ import 'package:flutter_langaw/components/ui/music-button.dart';
 import 'package:flutter_langaw/components/ui/sound-button.dart';
 import 'package:flutter_langaw/views/answer-interface.dart';
 import 'package:flutter_langaw/views/choose_field_interface.dart';
-import 'components/teachers/gold-coin.dart';
+import 'components/items/gold-coin.dart';
 import 'components/ui/a.dart';
+import 'components/ui/audio/background-music.dart';
 import 'components/ui/b.dart';
 import 'components/ui/c.dart';
 import 'components/ui/close-icon.dart';
 import 'views/shop-interface.dart';
-import 'components/ui/dambg.dart';
+import 'components/ui/bg.dart';
 import 'components/ui/ecaib-display.dart';
 import 'components/ui/gold-display.dart';
 import 'components/ui/minigame-button.dart';
@@ -57,9 +58,10 @@ class TeachersGame extends Game {
   List<Teacher> teachers;
   List<GoldCoin> goldCoins;
 
-  AudioPlayer bgm;
   MusicButton musicButton;
   SoundButton soundButton;
+
+  AudioPlayer bgm;
 
   TeachersGame(this.storage) {
     initialize();
@@ -88,9 +90,12 @@ class TeachersGame extends Game {
     musicButton = MusicButton(this);
     soundButton = SoundButton(this);
 
-    spawnTeacher();
+    /* source: https://patrickdearteaga.com/arcade-music/ */
 
-    bgm = await Flame.audio.playLongAudio('bgm.mp3', volume: 1);
+    bgm = await Flame.audio.loop('bgm.mp3', volume: 1);
+    //bgm.pause();
+
+    spawnTeacher();
   }
 
   void spawnTeacher() {

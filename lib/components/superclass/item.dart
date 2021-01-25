@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flame/components/component.dart';
+import 'package:flame/flame.dart';
 import 'package:flame/sprite.dart';
 import 'package:flutter/cupertino.dart';
 import '../../teachers-game.dart';
@@ -9,7 +10,7 @@ import '../../view.dart';
 class Item extends SpriteComponent {
   final TeachersGame game;
   Rect itemRect;
-  List<Sprite> itemSprite;
+  Sprite itemSprite;
   double itemSpriteIndex = 0;
 
   bool isTapped = false;
@@ -19,8 +20,7 @@ class Item extends SpriteComponent {
   }
 
   void render(Canvas c) {
-    itemSprite[itemSpriteIndex.toInt()].renderRect(
-        c, itemRect.inflate(2));
+    itemSprite.renderRect(c, itemRect);
   }
 
   void update(double t) {

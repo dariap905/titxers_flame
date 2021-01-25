@@ -30,7 +30,9 @@ class CloseIcon {
   }
 
   void onTapDown() {
-    Flame.audio.play('close-click.mp3');
+    if(game.soundButton.isEnabled){
+      Flame.audio.play('close-click.mp3');
+    }
     game.activeView = View.playing;
   }
 }
