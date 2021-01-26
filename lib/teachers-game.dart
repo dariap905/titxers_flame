@@ -8,6 +8,7 @@ import 'package:flutter_langaw/components/ui/sound-button.dart';
 import 'package:flutter_langaw/views/answer-interface.dart';
 import 'package:flutter_langaw/views/choose_field_interface.dart';
 import 'components/items/gold-coin.dart';
+import 'components/teachers/gines.dart';
 import 'components/teachers/pep.dart';
 import 'components/ui/a.dart';
 import 'components/ui/b.dart';
@@ -97,30 +98,22 @@ class TeachersGame extends Game {
   }
 
   void spawnTeacher() {
-
-    //randomize spawning
-    /*
-    * switch (rnd.nextInt(5)) {
-  case 0:
-    flies.add(HouseFly(this, x, y));
-    break;
-  case 1:
-    flies.add(DroolerFly(this, x, y));
-    break;
-  case 2:
-    flies.add(AgileFly(this, x, y));
-    break;
-  case 3:
-    flies.add(MachoFly(this, x, y));
-    break;
-  case 4:
-    flies.add(HungryFly(this, x, y));
-    break;
-}*/
     double x = rnd.nextDouble() * (screenSize.width - tileSize * 12);
     double y = rnd.nextDouble() * (screenSize.height - tileSize * 12);
-    teachers.add(Carles(this, x, y));
-    teachers.add(Pep(this, x+50, y+50));
+
+    //randomize spawning, change random according to how many teachers you have
+
+    switch (rnd.nextInt(3)) {
+      case 0:
+        teachers.add(Carles(this, x, y));
+        break;
+      case 1:
+        teachers.add(Pep(this, x + 50, y + 50));
+        break;
+      case 2:
+        teachers.add(Gines(this, x + 100, y + 100));
+        break;
+    }
   }
 
   void spawnGoldCoins() {

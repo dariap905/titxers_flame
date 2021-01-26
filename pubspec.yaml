@@ -53,11 +53,12 @@ flutter:
     - assets/images/items/round_gold_coin.png
     - assets/images/teachers/dam/pep.png
     - assets/images/teachers/dam/pep2.png
-    - assets/images/teachers/dam/pep3.png
     - assets/images/teachers/dam/carles.png
     - assets/images/teachers/dam/carles2.png
     - assets/images/teachers/dam/carles_tapped.png
     - assets/images/teachers/dam/carles_tapped2.png
+    - assets/images/teachers/dam/gines.png
+    - assets/images/teachers/dam/gines2.png
     - assets/images/ui/sound/bgm_disabled.png
     - assets/images/ui/sound/bgm_enabled.png
     - assets/images/ui/sound/sound_disabled.png
